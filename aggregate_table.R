@@ -19,9 +19,6 @@ aggregate_table <- worldcup %>%
   ) %>%
   arrange(desc(TotalWins))
 
-aggregate_table <- left_join(aggregate_table, winners, by = c("Home.Team.Name" = "Winner")) %>%
-  mutate(WorldCupWins = sum(!is.na(Year)))
-
-aggregate_table <- aggregate_table %>%
-  mutate(WorldCupWins = sum(`Home.Team.Name` %in% worldcup$Home.Team.Name[worldcup$Stage == "Final"]))
+colnames(aggregate_table) <- c("Team", "Total Matches", "Total Wins", "Avg Goals Scored", "Avg Goals Conceded",
+                               "Total Home Goals", "Total Away Goals", "World Cup Wins")
 
