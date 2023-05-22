@@ -1,6 +1,7 @@
 library(dplyr)
 library(knitr)
 
+
 winners <- read.csv('WorldCups.csv')
 
 worldcup <- read.csv('WorldCupMatches.csv')
