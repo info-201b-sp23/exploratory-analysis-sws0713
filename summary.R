@@ -2,8 +2,8 @@ library("dplyr")
 library("stringr")
 
 # Store the dataframes
-wc_df <- read.csv("WorldCups.csv")
-matches_df <- read.csv("WorldCupMatches.csv")
+wc_df <- read.csv("https://raw.githubusercontent.com/info-201b-sp23/exploratory-analysis-sws0713/main/WorldCups.csv")
+matches_df <- read.csv("https://raw.githubusercontent.com/info-201b-sp23/exploratory-analysis-sws0713/main/WorldCupMatches.csv")
 
 # What is the country with the most World Cups won?
 winners_table <- wc_df %>%
@@ -16,8 +16,7 @@ winners_table <- wc_df %>%
 hosts_table <- wc_df %>%
   group_by(Country) %>%
   summarize(number_hosted = n()) %>%
-  arrange(desc(number_hosted)) %>%
-  head(1)
+  arrange(desc(number_hosted)) 
 
 # What is the host country with the highest attendance?
 attendance_table <- wc_df %>%

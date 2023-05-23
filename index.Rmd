@@ -3,82 +3,140 @@ title: "Exploratory Analysis"
 output: html_document
 ---
 
-## Project title
+## Analyzing World Cup Countries: What makes a winner?
 
 Give your project a concise, interesting title that summarizes the entirety of your project
 
 ### Authors
 
-Names of your team members
-
+ - Rui Ma (mr0130@uw.edu)
+ - Wooseob Shin (ws0713@uw.edu)
+ - Taran Bains (tbains@uw.edu)
+ - Zheng Zhou (zz345@uw.edu)
+ - Ethan Beh (ethanbeh@uw.edu)
+ 
 ### Date
 
-Winter 2022
+5/22/23
 
 ### Abstract
 
-No more than three sentences that summarize your project. Focus on the very most important aspects. For example: (1) "Our main question is .... This question is important because .... To address the question, we will ...." (2) "We are concerned with ..., because .... To address this concern, we plan to ...." (3) "Consider that .... This is important because .... Accordingly, we plan to ...."
+Our main question is, “What makes a country more likely to win the World Cup?” This is important because the World Cup is the most watched global sporting event and millions of people have enthusiasm for the outcome. We will examine the data from each World Cup in order to answer this question and discuss each game's statistics, as well as additional significant variables that influence the final outcome.
 
 ### Keywords
 
-3-5 keywords that summarize your project.
-(e.g., "Keywords: human physiology; bicycle exercise; Gen Z; times-series data")
+ - Global
+ - Sport
+ - Culture
 
 ### Introduction  
 
-Briefly introduce your project.  Include 3-5 research questions. What motivates the questions? Why are they important? (at least 200 words)
+This research project aims to answer the question of what makes a country more likely to win the World Cup - a global soccer tournament that takes place every four years, and one of the most-watched sporting events in the world. The competition generates a lot of interest and speculation about which country is more likely to emerge as the champion. Therefore, it is crucial to understand factors that can contribute to a country's success in the tournament.
+
+The FIFA World Cup Archive provides a vast collection of data that can help answer this question. This data includes information on various factors, such as the host country and performance in each tournament. By analyzing this data through the lenses of answering questions like “Is the host country more likely to win the World Cup?”; “Does previous performance indicate future performance?”; and “Can geographical location indicate chances of winning?”, the research project can gain insights into whether these factors contribute to a country’s chances of success in the World Cup.
+
+Understanding what makes a country more likely to win is important for a couple reasons. It can provide insights into the state of soccer in different countries, including identifying emerging powers in the sport. Also, understanding the trends that contribute to a country's success can also shed light on broader social and cultural factors that influence sports performance, such as investment in sports infrastructure, training techniques, and national pride.
+
+Overall, this research is motivated by the desire to understand what makes a country more likely to win the World Cup and to explore the broader implications of this understanding for soccer and society as a whole.
 
 ### Related Work  
 
-Describe your topic and related work in this space. You must include 3 citations to related work (URLs to similar work, high quality articles from the popular press, research papers, etc. ) Please use a standard citation style of your choice. (at least 200 words)
+Winning the World Cup is a complex achievement that depends on a variety of factors. Some of the key areas that may be covered in this section include firstly, team performance. Previous research has looked at factors such as team strength, experience, and performance in qualifying matches as predictors of success in the World Cup. Then, player characteristics. The role of individual player characteristics such as age, experience, skill, and physical attributes has also been studied in relation to team success in the World Cup. Thirdly, home advantage is also a crucial part. The impact of playing on home soil and the effect of home support has been explored in previous research. What’s more, economic factors can influence the results. Some research has suggested that economic factors such as a country's GDP or investment in soccer infrastructure may be associated with World Cup success. Lastly, cultural and social factors cannot be ignored. The influence of cultural and social factors such as national identity, soccer culture, and fan support has also been examined in relation to World Cup success. Overall, winning the World Cup requires a combination of skill, preparation, experience, and luck. A country that can bring these elements together in the right way may increase its chances of winning the tournament.
+
+Citations:
+
+ - Thomas, J. (2022, November 14). Why is the FIFA World Cup played every four years? Explaining the gap between tournaments and whether it could change. Sporting News. https://www.sportingnews.com/us/soccer/news/fifa-world-cup-four-years-tournament-played-change/ktlngemqgduhjrtgg8sufxem
+ - Roadtrips. (2023, March 1). World Cup Ultimate Guide - World Cup History and Facts - Roadtrips. https://www.roadtrips.com/luxury-travel-guides/world-cup-ultimate-guide/
+ - Panja, T. (2023, March 14). 2026 World Cup Will Have Four-Team Groups and 24 More Games. The New York Times. https://www.nytimes.com/2023/03/14/sports/soccer/2026-world-cup-format.html
 
 ### The Dataset
 
-Where did you find the data? Please include a link to the data source  
-Who collected the data?  
-How was the data collected or generated?  
-Why was the data collected?  
-How many observations (rows) are in your data?  
-How many features (columns) are in the data?  
-What, if any, ethical questions or questions of power do you need to consider when working with this data?  
-What are possible limitations or problems with this data?   (at least 200 words)
+> Where did you find the data? Please include a link to the data source
+
+We found our data on the Kaggle website.
+https://www.kaggle.com/datasets/abecklas/fifa-world-cup?select=WorldCups.csv
+
+> Who collected the data?  
+
+This data is courtesy of the FIFA World Cup Archive website and collected by Andre Becklas.
+
+> How was the data collected or generated?  
+
+The data was collected by official match reports and statistics provided by the organizing committee and participating teams.
+
+> Why was the data collected?  
+
+It was collected for performance and statistical analysis, media purposes, as well as fan engagement.
+
+>How many observations (rows) are in your data?  
+
+There are 20 rows.
+
+> How many features (columns) are in the data?  
+
+There are 10 columns.
+
+> What, if any, ethical questions or questions of power do you need to consider when working with this data?  
+
+Concerns about privacy arise because personal information about players and other individuals may be collected, stored, and shared without their consent or knowledge. Concerns about who owns the data collected during the World Cup, who has access to it, and who can use it for commercial or other purposes can arise.
+
+> What are possible limitations or problems with this data?   (at least 200 words)
+
+The quality of the data from the FIFA World Cup can be a significant limitation for the data analysis. The data collection methods can vary depending on the source, which can impact the accuracy and precision of the results from every game. For example, data collected from live broadcasts may not be as reliable as information gathered using more advanced tracking technologies from the organizing committee and participating teams. Additionally, incomplete or missing data can limit the types of analyses that can be performed and reduce the accuracy of the outcomes. The potential for human error in data collection and analysis, particularly for subjective metrics like player ratings or referee decisions, can pose a challenge. Confounding factors, such as injuries, weather conditions, or team dynamics, may also impact the results but may not be accounted for in the data. It is essential to be aware of these potential limitations and take steps to overcome them, such as using multiple sources of data, ensuring data completeness, and performing thorough quality checks to reduce errors and bias. By addressing these challenges, we can improve the accuracy and reliability of the data collected during the World Cup, providing a more comprehensive understanding of team and player performance.
 
 ### Implications
 
-Assuming you answer your research questions, briefly describe the expected or possible implications for technologists, designers, and policymakers. (at least 150 words)
+Should the research questions be answered, it allows many stakeholders to benefit from the information provided throughout this analysis. For technologists, the implications could include a greater understanding of design systems that offer great insight into the world of soccer and the factors that go into winning the world cup. Additionally, it could offer them more insight into identifying advantages and disadvantages for all teams within the area and how best to understand certain attributes of these soccer teams. For designers, this analysis could help them design products or services that help others understand certain factors for performance in a certain metric, as well as trends based from prior data and experiences. For policymakers, the findings from the research questions could give insight for the regulations made for certain countries hosting the world cup and how best to potentially eliminate any competitive advantages certain teams could benefit from in that host country’s environment.
 
 ### Limitations & Challenges
-What challenges or limitations might you need to address with your project idea more broadly? Briefly discuss. (at least 150 words)
+
+One challenge or limitation that needs to be addressed is combining/joining the three data frames we found on Kaggle. As a group, we were able to discover these three data frames that contain information about individual matches, each world cup, and each player. In order to work smoothly with these three data frames, we believe that we need to come up with a way to combine them. We will have to figure out the common columns to join them with. Another challenge might be finding the most efficient way to utilize the data frame since it contains a lot of information. For instance, the data frames include all world cup information from the very first 1930 Uruguay World Cup to the 2018 Russia World Cup. That is a total of 21 World Cups. Not all of them have the same amount of matches but each holds about 60-80 matches per competition. This shows how big the data frame is and we would have to find an efficient way to fully utilize it. 
 
 ### Summary Information
 
-Write a summary paragraph of findings that includes the 5 values calculated from your summary information R script
+The country with the most World Cups won is Brazil with 5 cups. 5 countries have hosted the World Cup the most: Brazil, France, Italy, Germany, and Mexico have all hosted twice. The host country with the highest attendance was the United States of America, who hosted in 1994 and garnered 3,587,538 attendees. The country which has scored the highest number of goals in the World Cup as of 2014 is Brazil, with 225 goals total.
 
 ### Table
 
-Include a table of aggregate information
+```{r, echo = FALSE, message = FALSE, code = readLines("aggregate_table.R")}
+```
 
-Describe why you included the table and what information it reveals
+The table is included to offer an aggregate perspective of World Cup data, with a particular emphasis on team performance and crucial statistics. Here's a breakdown of the data presented by the table:
+
+ - Team: The names of the World Cup teams are listed in this column.
+ - Total Matches: This statistic displays the total number of matches played by each side.
+ - Total Goals Scored: This column displays the total number of goals scored by each team throughout the World Cup.
+ - Total Goals Conceded: This column displays the total number of goals conceded by each team throughout the World Cup.
+ - Goal Ratio: This column displays the ratio of goals scored to goals conceded.
+ - Average Attendance: It displays the average attendance for each team's matches.
+
+We may learn about the performance of teams in the World Cup by looking at this table. It allows us to compare each team's total number of matches played, goals scored and conceded (both at home and away), and average attendance. This data may be used to assess team popularity, offensive and defensive ability, and overall tournament performance.
+Overall, this aggregate table gives a brief review of team performance, highlighting key criteria that contribute to World Cup success.
+
 
 ### Chart 1
 
-Include a chart
-
-Describe why you chose this chart and what information it reveals
-
-Here's an example of how to run an R script inside an RMarkdown file:
-
-``````{r, echo = FALSE, code = readLines("chart1_example.R")}
+```{r, echo = FALSE, message = FALSE, warning = FALSE, code = readLines("chart_rui.R")}
 ```
+
+The scatter plot is titled “Goals Scored and Goals Conceded of World Cup Matches”. The x-axis represents the goals scored by each country in the World Cups they have participated in, and the y-axis represents the goals conceded by each country in the World Cups they have participated in. Each dot represents a country (the name of the country is indicated below the dot). The further to the right the dot is positioned, the more goals the country has scored. The lower the dot, the fewer goals the country conceded. Thus, we can use this to analyze the overall performance of a national team in the World Cup and analyze the strength of the country's soccer.
+
+I have noticed that the goal scored and goals conceded slope is proportional. Germany, Argentina, and France are on the very right part, especially Brazil, this means these countries had the top performance of all countries. Brazil is in the right position, and it has the most championships won. 
 
 ### Chart 2
 
-Include a chart
+```{r, echo = FALSE, message = FALSE, code = readLines("chart2_ethan.R")}
+```
 
-Describe why you chose this chart and what information it reveals
+This chart is included to measure attendance as a metric for the popularity of the world cup over time. In this way, it could provide information to soccer fans who are passionate about the more competitive side of soccer. 
+
+It is exhibited that the chart attendance jumped around until the year 1975. After that, the attendance jumped considerably consistently until recent. This signals that the popularity of competitive soccer started really taking off around that time. Other external factors, such as WWII, could explain the drop in World Cup attendance from the years of 1934-1950.
 
 ### Chart 3
 
-Include a chart
+```{r, echo = FALSE, message = FALSE, code = readLines("chart_wooseob.R")}
+```
 
-Describe why you chose this chart and what information it reveals
+The purpose of this chart is to showcase which countries have won the World Cup and how many times they have won. Because of the widespread interest in who wins the tournament, it would be crucial to create a chart that showed the winners in one graph.
+
+Despite the amount of times the World Cup has been hosted, only a selective countries have won it. So far, only European and South American countries have won the tournament. Brazil won the world cup the most with 5 times prior to 2018. 
