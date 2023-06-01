@@ -1,5 +1,8 @@
 library(dplyr)
 library(ggplot2)
+#Load the file
+WorldCupMatches <- read.csv("https://raw.githubusercontent.com/info-201b-sp23/exploratory-analysis-sws0713/main/WorldCupMatches.csv")
+
 # calculate the home team stat
 home_team_stats <- WorldCupMatches %>%
   group_by(`Home.Team.Name`) %>%
@@ -13,7 +16,7 @@ away_team_stats <- WorldCupMatches %>%
   group_by(`Away.Team.Name`) %>%
   summarize(
     Total_Goals_Away = sum(`Away.Team.Goals`),
-    Total_Losses_Away = sum(Home.Team.Goals)
+    Total_Losses_Away = sum(`Home.Team.Goals`)
   )
 
 # combine
